@@ -8,6 +8,7 @@ This interactive resume serves to:
 Provide a creative and engaging experience for viewers to learn about Kyle's background.
 Highlight technical and development skills through a live coding demonstration.
 Share Kyle's contact details and portfolio website for collaboration opportunities.
+
 ✨ Features
 Live Typing Simulation
 The resume builds itself line-by-line, just like coding live in a text editor.
@@ -26,6 +27,7 @@ HTML5: Structure of the page.
 CSS3: Styling for both the code editor and resume display.
 JavaScript: Core functionality to simulate live typing and display content dynamically.
 Prism.js: Syntax highlighting for the "code editor" area.
+
 📦 Installation
 To run this project locally:
 
@@ -75,12 +77,14 @@ This project:
 Combines storytelling with technical demonstration.
 Showcases Kyle's professional achievements while demonstrating coding skills.
 Creates an engaging and unique resume experience unlike a traditional PDF or document.
+
 📝 Contact
 If you'd like to collaborate or learn more:
 
 Portfolio: kylehughesofficial.com
 LinkedIn: linkedin.com/in/kyleleehughes
 Email: kylehughes00@gmail.com
+
 🎉 Acknowledgments
 Thank you for exploring my interactive resume! I hope you enjoyed the experience as much as I enjoyed building it. Let's connect and create something amazing together. 🚀
 

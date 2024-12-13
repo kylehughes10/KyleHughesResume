@@ -1,177 +1,154 @@
-// Lines of Code & Associated Actions
+// Lines of Code & Actions
 const codeSteps = [
-    { 
-      code: "// Welcome to my interactive resume!",
-      action: () => {}
-    },
-    { 
-      code: "// I’ll type this out live and build my resume step-by-step.",
-      action: () => {}
-    },
-    { 
-      code: "// Watch it come together as if I’m coding it in real time.",
-      action: () => {}
-    },
-    { 
-      code: "// Step 1: Let’s start with my name, contact details, and personal website.",
-      action: () => {}
-    },
-    { 
-      code: "let name = 'Kyle Hughes';",
-      action: () => {}
-    },
-    { 
-      code: "let contact = `(580) 775-1076 | kylehughes00@gmail.com | linkedin.com/in/kyleleehughes | kylehughesofficial.com`;",
-      action: () => {}
-    },
-    { 
-      code: "document.getElementById('resume-output').innerHTML = `<h1>${name}</h1><p>${contact}</p>`;",
-      action: () => {
-        document.getElementById('resume-output').innerHTML = `
-          <h1>Kyle Hughes</h1>
-          <p>
-            (580) 775-1076 | 
-            kylehughes00@gmail.com | 
-            <a href="https://linkedin.com/in/kyleleehughes" target="_blank">linkedin.com/in/kyleleehughes</a> | 
-            <a href="https://www.kylehughesofficial.com" target="_blank">kylehughesofficial.com</a>
-          </p>`;
-      }
-    },
-    { 
-      code: "// Step 2: Adding a professional overview to introduce myself.",
-      action: () => {}
-    },
-    { 
-      code: "let overview = `Experienced finance professional with a robust background in technology and finance. Proven track record in leveraging programming skills to enhance financial operations and drive business growth. Adept at developing financial applications, managing large-scale projects, and deploying innovative solutions to optimize productivity and profitability. Eager to bring deep industry knowledge and technical expertise to a role in the banking sector.`;",
-      action: () => {
-        document.getElementById('resume-output').innerHTML += `
-          <h2>PROFESSIONAL OVERVIEW</h2>
-          <p>Experienced finance professional with a robust background in technology and finance. Proven track record in leveraging programming skills to enhance financial operations and drive business growth. Adept at developing financial applications, managing large-scale projects, and deploying innovative solutions to optimize productivity and profitability. Eager to bring deep industry knowledge and technical expertise to a role in the banking sector.</p>`;
-      }
-    },
-    { 
-      code: "// Step 3: Let’s add my education history.",
-      action: () => {}
-    },
-    { 
-      code: "let education = [\n  { school: 'Southern Methodist University – Southwest Graduate School of Banking', location: 'Dallas, TX', degree: 'Business Executive Leadership' },\n  { school: 'Southeastern Oklahoma State University', location: 'Durant, OK', degree: 'Bachelor of Business Administration in Finance and Banking' }\n];",
-      action: () => {
-        const education = [
-          { school: 'Southern Methodist University – Southwest Graduate School of Banking', location: 'Dallas, TX', degree: 'Business Executive Leadership' },
-          { school: 'Southeastern Oklahoma State University', location: 'Durant, OK', degree: 'Bachelor of Business Administration in Finance and Banking' }
-        ];
-        document.getElementById('resume-output').innerHTML += `
-          <h2>EDUCATION</h2>
-          ${education.map(edu => `
-            <p><strong>${edu.school}</strong> (${edu.location})<br>
-            <em>${edu.degree}</em></p>`).join('')}`;
-      }
-    },
-    { 
-      code: "// Step 4: Adding my professional experience.",
-      action: () => {}
-    },
-    { 
-      code: "let experience = [\n  { title: 'AVP, Senior Business Analyst', company: 'First United Bank and Trust', year: 'June 2022 – Present', responsibilities: [\n    'Spearheaded the development and execution of major strategic initiatives that significantly increased operational efficiency and propelled the bank\\'s digital transformation.',\n    'Led the implementation of CRM and ERP systems (Salesforce, nCino), boosting loan origination process efficiency by 50% and improving deposit account operations by 30%.',\n    'Oversaw the integration of platforms: Azure Snowflake, Microsoft 365, Resolver, MuleSoft.',\n    'Collaborated with the CEO and leadership to support the bank\\'s goal of achieving a $30 billion asset target.'\n  ] },\n  { title: 'Enterprise Risk Management Analyst', company: 'First United Bank and Trust', year: 'August 2020 – June 2022', responsibilities: [\n    'Enhanced the bank\\'s risk management framework, contributing to balance sheet growth from $8B to $12B.',\n    'Established the Operational Risk Management team and improved risk processes across divisions.',\n    'Played a pivotal role in maintaining FDIC and third-party audit compliance.'\n  ] },\n  { title: 'Financial Services Accountant & Analyst', company: 'First United Bank and Trust', year: 'June 2020 – August 2020', responsibilities: [\n    'Led financial integration during acquisition of an insurance company.',\n    'Transitioned vendor payments from checks to ACH, improving efficiency by 30%.',\n    'Redesigned mortgage document workflows for improved efficiency.'\n  ] },\n  { title: 'Relationship Banker', company: 'First United Bank and Trust', year: 'June 2018 – June 2020', responsibilities: [\n    'Delivered exceptional customer service and exceeded performance goals.',\n    'Led consumer lending operations and implemented effective sales campaigns.'\n  ] }];",
-      action: () => {
-        const experience = [
-          { title: 'AVP, Senior Business Analyst', company: 'First United Bank and Trust', year: 'June 2022 – Present', responsibilities: [
-            'Spearheaded the development and execution of major strategic initiatives that significantly increased operational efficiency and propelled the bank\'s digital transformation.',
-            'Led the implementation of CRM and ERP systems (Salesforce, nCino), boosting loan origination process efficiency by 50% and improving deposit account operations by 30%.',
-            'Oversaw the integration of platforms: Azure Snowflake, Microsoft 365, Resolver, MuleSoft.',
-            'Collaborated with the CEO and leadership to support the bank\'s goal of achieving a $30 billion asset target.'
-          ]},
-          { title: 'Enterprise Risk Management Analyst', company: 'First United Bank and Trust', year: 'August 2020 – June 2022', responsibilities: [
-            'Enhanced the bank\'s risk management framework, contributing to balance sheet growth from $8B to $12B.',
-            'Established the Operational Risk Management team and improved risk processes across divisions.',
-            'Played a pivotal role in maintaining FDIC and third-party audit compliance.'
-          ]},
-          { title: 'Financial Services Accountant & Analyst', company: 'First United Bank and Trust', year: 'June 2020 – August 2020', responsibilities: [
-            'Led financial integration during acquisition of an insurance company.',
-            'Transitioned vendor payments from checks to ACH, improving efficiency by 30%.',
-            'Redesigned mortgage document workflows for improved efficiency.'
-          ]},
-          { title: 'Relationship Banker', company: 'First United Bank and Trust', year: 'June 2018 – June 2020', responsibilities: [
-            'Delivered exceptional customer service and exceeded performance goals.',
-            'Led consumer lending operations and implemented effective sales campaigns.'
-          ]}
-        ];
-        document.getElementById('resume-output').innerHTML += `
-          <h2>EXPERIENCE</h2>
-          ${experience.map(exp => `
-            <h3>${exp.company}</h3>
-            <h4><em>${exp.title}</em> (${exp.year})</h4>
-            <ul>${exp.responsibilities.map(task => `<li>${task}</li>`).join('')}</ul>`).join('')}`;
-      }
-    },
-    { 
-      code: "// Step 5: Adding my skills and certifications.",
-      action: () => {}
-    },
-    { 
-      code: "let skills = 'Financial Analysis, Financial Modeling, Project Management, Python, JavaScript, SQL, Agile Methodologies, Azure Cloud, Salesforce Development';",
-      action: () => {}
-    },
-    { 
-      code: "let certifications = 'Certified Scrum Master (CSM), SAFe, Mastering Design Thinking, Certified Salesforce Business Analyst, Credit Risk Certification (CRC)';",
-      action: () => {
-        document.getElementById('resume-output').innerHTML += `
-          <h2>SKILLS</h2>
-          <p>Financial Analysis, Financial Modeling, Project Management, Python, JavaScript, SQL, Agile Methodologies, Azure Cloud, Salesforce Development</p>
-          <h2>CERTIFICATIONS</h2>
-          <p>Certified Scrum Master (CSM), SAFe, Mastering Design Thinking, Certified Salesforce Business Analyst, Credit Risk Certification (CRC)</p>`;
-      }
-    },
-    { 
-      code: "// Thanks for checking out my interactive resume! If you'd like to work together, visit my website below.",
-      action: () => {
-        document.getElementById('resume-output').innerHTML += `
-          <p>Thanks for exploring my interactive resume! 🚀</p>
-          <p>Let’s connect at: <a href="https://www.kylehughesofficial.com" target="_blank">www.kylehughesofficial.com</a></p>`;
-      }
+  // Introduction
+  { code: "// Welcome to my interactive resume!", action: () => {} },
+  { code: "// I'll type this out live and build my resume step-by-step.", action: () => {} },
+  { code: "// Watch the magic happen in real-time. Let's begin! 🚀", action: () => {} },
+
+  // Step 1: Header
+  { code: "// Step 1: Adding my name and contact details.", action: () => {} },
+  { code: "const name = 'Kyle Hughes';", action: () => {} },
+  { code: "const contact = 'kylehughes00@gmail.com | linkedin.com/in/kyleleehughes | kylehughesofficial.com';", action: () => {} },
+  { 
+    code: "document.getElementById('resume-output').innerHTML = `\n  <h1>${name}</h1>\n  <p>Email: <a href='mailto:kylehughes00@gmail.com'>kylehughes00@gmail.com</a></p>\n  <p>\n    <a href='https://linkedin.com/in/kyleleehughes' target='_blank'>linkedin.com/in/kyleleehughes</a> |\n    <a href='https://kylehughesofficial.com' target='_blank'>kylehughesofficial.com</a>\n  </p>`;",
+    action: () => {
+      document.getElementById('resume-output').innerHTML = `
+        <h1>Kyle Hughes</h1>
+        <p>Email: <a href="mailto:kylehughes00@gmail.com">kylehughes00@gmail.com</a></p>
+        <p>
+          <a href="https://linkedin.com/in/kyleleehughes" target="_blank">linkedin.com/in/kyleleehughes</a> |
+          <a href="https://kylehughesofficial.com" target="_blank">kylehughesofficial.com</a>
+        </p>`;
     }
-  ];
-  
-  // Typing Logic
-  let currentCode = '';
-  let stepIndex = 0;
-  let skip = false;
-  
-  function typeStep() {
-    if (stepIndex < codeSteps.length && !skip) {
-      const step = codeSteps[stepIndex];
-      let charIndex = 0;
-  
-      function typeCharacter() {
-        if (charIndex < step.code.length) {
-          currentCode += step.code[charIndex];
-          document.getElementById('code').textContent = currentCode;
-          Prism.highlightAll();
-          charIndex++;
-          setTimeout(typeCharacter, 20);
-        } else {
-          step.action();
-          currentCode += '\n\n';
-          stepIndex++;
-          setTimeout(typeStep, 500);
-        }
-      }
-      typeCharacter();
-    } else if (skip) {
-      renderFinalResume();
+  },
+
+  // Step 2: Professional Overview
+  { code: "// Step 2: Adding a professional overview.", action: () => {} },
+  { 
+    code: "const overview = `Experienced finance professional with a robust background in technology and finance. \nProven track record in leveraging programming skills to enhance financial operations and drive business growth.`;", 
+    action: () => {}
+  },
+  { 
+    code: "document.getElementById('resume-output').innerHTML += `\n  <h2>Professional Overview</h2>\n  <p>${overview}</p>`;",
+    action: () => {
+      document.getElementById('resume-output').innerHTML += `
+        <h2>Professional Overview</h2>
+        <p>Experienced finance professional with a robust background in technology and finance. 
+        Proven track record in leveraging programming skills to enhance financial operations 
+        and drive business growth.</p>`;
+    }
+  },
+
+  // Step 3: Education
+  { code: "// Step 3: Adding my education history.", action: () => {} },
+  { 
+    code: "const education = [\n  { school: 'Southern Methodist University – Southwest Graduate School of Banking', degree: 'Business Executive Leadership' },\n  { school: 'Southeastern Oklahoma State University', degree: 'Bachelor of Business Administration in Finance & Banking' }\n];", 
+    action: () => {}
+  },
+  { 
+    code: "education.forEach(edu => {\n  document.getElementById('resume-output').innerHTML += `\n    <h2>Education</h2>\n    <p><strong>${edu.school}</strong><br><em>${edu.degree}</em></p>`;\n});",
+    action: () => {
+      const eduData = [
+        { school: 'Southern Methodist University – Southwest Graduate School of Banking', degree: 'Business Executive Leadership' },
+        { school: 'Southeastern Oklahoma State University', degree: 'Bachelor of Business Administration in Finance & Banking' }
+      ];
+      document.getElementById('resume-output').innerHTML += `
+        <h2>Education</h2>
+        ${eduData.map(edu => `<p><strong>${edu.school}</strong><br><em>${edu.degree}</em></p>`).join('')}`;
+    }
+  },
+
+  // Step 4: Work Experience
+  { code: "// Step 4: Adding my professional experience.", action: () => {} },
+  { 
+    code: "const experience = [\n  { title: 'AVP, Senior Business Analyst', company: 'First United Bank and Trust', year: 'June 2022 – Present', responsibilities: [\n    'Developed and executed strategic initiatives to improve operational efficiency.',\n    'Led CRM and ERP implementations (Salesforce, nCino).',\n    'Integrated platforms: Azure Snowflake, Microsoft 365, Resolver, MuleSoft.',\n    'Supported leadership to achieve the bank’s $30 billion asset target.'\n  ]},\n  { title: 'Enterprise Risk Management Analyst', company: 'First United Bank and Trust', year: 'Aug 2020 – June 2022', responsibilities: [\n    'Enhanced the risk management framework to scale the bank’s growth from $8B to $12B.',\n    'Established the Operational Risk Management team.',\n    'Ensured FDIC and third-party audit compliance.'\n  ]},\n  { title: 'Financial Services Accountant & Analyst', company: 'First United Bank and Trust', year: 'June 2020 – Aug 2020', responsibilities: [\n    'Led financial integration during an insurance company acquisition.',\n    'Improved efficiency by transitioning vendor payments to ACH.',\n    'Redesigned mortgage workflows to improve productivity.'\n  ]},\n  { title: 'Relationship Banker', company: 'First United Bank and Trust', year: 'June 2018 – June 2020', responsibilities: [\n    'Delivered exceptional customer service and exceeded sales goals.',\n    'Managed consumer lending and implemented sales campaigns.'\n  ]}\n];",
+    action: () => {}
+  },
+  { 
+    code: "experience.forEach(exp => {\n  document.getElementById('resume-output').innerHTML += `\n    <h3>${exp.company}</h3>\n    <h4>${exp.title} (${exp.year})</h4>\n    <ul>${exp.responsibilities.map(task => `<li>${task}</li>`).join('')}</ul>`;\n});",
+    action: () => {
+      const expData = [
+        { title: 'AVP, Senior Business Analyst', company: 'First United Bank and Trust', year: 'June 2022 – Present', responsibilities: [
+          'Developed and executed strategic initiatives to improve operational efficiency.',
+          'Led CRM and ERP implementations (Salesforce, nCino).',
+          'Integrated platforms: Azure Snowflake, Microsoft 365, Resolver, MuleSoft.',
+          'Supported leadership to achieve the bank’s $30 billion asset target.'
+        ]},
+        { title: 'Enterprise Risk Management Analyst', company: 'First United Bank and Trust', year: 'Aug 2020 – June 2022', responsibilities: [
+          'Enhanced the risk management framework to scale the bank’s growth from $8B to $12B.',
+          'Established the Operational Risk Management team.',
+          'Ensured FDIC and third-party audit compliance.'
+        ]},
+        { title: 'Financial Services Accountant & Analyst', company: 'First United Bank and Trust', year: 'June 2020 – Aug 2020', responsibilities: [
+          'Led financial integration during an insurance company acquisition.',
+          'Improved efficiency by transitioning vendor payments to ACH.',
+          'Redesigned mortgage workflows to improve productivity.'
+        ]},
+        { title: 'Relationship Banker', company: 'First United Bank and Trust', year: 'June 2018 – June 2020', responsibilities: [
+          'Delivered exceptional customer service and exceeded sales goals.',
+          'Managed consumer lending and implemented sales campaigns.'
+        ]}
+      ];
+      document.getElementById('resume-output').innerHTML += `
+        <h2>Professional Experience</h2>
+        ${expData.map(exp => `
+          <h3>${exp.company}</h3>
+          <h4>${exp.title} (${exp.year})</h4>
+          <ul>${exp.responsibilities.map(task => `<li>${task}</li>`).join('')}</ul>
+        `).join('')}`;
+    }
+  },
+
+  // Step 5: Skills
+  { code: "// Step 5: Adding my skills and certifications.", action: () => {} },
+  { code: "const skills = 'Python, JavaScript, Agile, Azure, SQL, Salesforce Development';", action: () => {} },
+  { code: "const certifications = 'Certified Scrum Master (CSM), Mastering Design Thinking, CRC.';", action: () => {} },
+  { 
+    code: "document.getElementById('resume-output').innerHTML += `<h2>Skills</h2><p>${skills}</p><h2>Certifications</h2><p>${certifications}</p>`;",
+    action: () => {
+      document.getElementById('resume-output').innerHTML += `
+        <h2>Skills</h2>
+        <p>Python, JavaScript, Agile, Azure, SQL, Salesforce Development</p>
+        <h2>Certifications</h2>
+        <p>Certified Scrum Master (CSM), Mastering Design Thinking, Credit Risk Certification (CRC)</p>`;
     }
   }
-  
-  function renderFinalResume() {
-    skip = true;
-    currentCode = codeSteps.map(step => step.code).join('\n\n');
-    document.getElementById('code').textContent = currentCode;
-    Prism.highlightAll();
-    codeSteps.forEach(step => step.action());
-    document.getElementById('skip-button').innerText = "Restart";
-    document.getElementById('skip-button').onclick = () => location.reload();
+];
+
+// Typing Logic & Skip Button
+let currentCode = '';
+let stepIndex = 0;
+
+function typeStep() {
+  if (stepIndex < codeSteps.length) {
+    const step = codeSteps[stepIndex];
+    let charIndex = 0;
+
+    function typeCharacter() {
+      if (charIndex < step.code.length) {
+        currentCode += step.code[charIndex];
+        document.getElementById('code').textContent = currentCode;
+        Prism.highlightAll();
+        charIndex++;
+        setTimeout(typeCharacter, 20);
+      } else {
+        step.action();
+        currentCode += '\n\n';
+        stepIndex++;
+        setTimeout(typeStep, 500);
+      }
+    }
+    typeCharacter();
   }
-  
-  document.getElementById('skip-button').addEventListener('click', renderFinalResume);
-  
-  typeStep();
+}
+
+// Skip Button Logic
+document.getElementById('skip-button').addEventListener('click', () => {
+  stepIndex = codeSteps.length;
+  currentCode = codeSteps.map(step => step.code).join('\n\n');
+  document.getElementById('code').textContent = currentCode;
+  Prism.highlightAll();
+  codeSteps.forEach(step => step.action());
+});
+
+typeStep();
